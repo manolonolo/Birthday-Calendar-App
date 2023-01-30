@@ -1,17 +1,20 @@
-import axios from 'axios';
-
-export const getAllGifts= () => async(dispatch) => {
+export const getAllGifts= () => (dispatch) => {
     console.log('getAllGifts');
-    return await axios.get('/gifts')
-    .then((info) => {
-        console.log(info.data);
-        dispatch({type: 'GET_ALL_GIFTS', payload: info.data});
+    return fetch('http://localhost:3001/gifts')
+    .then(res => {
+        res.json()
+        .then((info) => {
+            dispatch({type: 'GET_ALL_GIFTS', payload: info});
+        })
     })
     .catch((error) => console.log(error));
 };
 
-export const getGiftById = (id) => async (dispatch) => {
-    return axios.get(`/gifts/${id}`)
-    .then(info => dispatch({type: 'GET_GIFT_BY_ID', payload: info.data}))
+/*
+export const getGiftById = (id) => (dispatch) => {
+    return fetch(`http://localhost:3000/gifts/${id}`)
+    .then((res) => res.json())
+    .then((info) => dispatch({type: 'GET_GIFT_BY_ID', payload: info.data}))
     .catch(error => dispatch({type:'GET_GIFT_BY_ID', payload: {error}}))
 }
+*/
