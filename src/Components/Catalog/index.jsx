@@ -23,7 +23,7 @@ const Catalog = () => {
                                 title={gift.title}
                                 description={gift.description}
                                 price={gift.price}
-                                image={gift.image}
+                                imgURL={gift.imgURL}
                                 category={gift.category} 
                                 id={gift.id} />
                     </div>

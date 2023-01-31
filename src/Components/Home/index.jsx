@@ -8,13 +8,13 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('useEffect')
         dispatch(getAllGifts())
     }, [dispatch]);
 
     const allGifts = useSelector((state) => state.gifts);
 
     const topGifts = allGifts.slice(-3);
+    console.log(topGifts);
 
     return(
         <div className="Home">
@@ -29,13 +29,14 @@ const Home = () => {
                 <div className="top-gifts container">
                 {
                     topGifts?.map((gift) => {
+                        console.log(gift.imgURL);
                         return(
                             <div>
                                 <GiftCard
                                     title={gift.title}
                                     description={gift.description}
                                     price={gift.price}
-                                    image={gift.image}
+                                    imgURL={gift.imgURL}
                                     category={gift.category} 
                                     id={gift.id} />
                             </div>

@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-const GiftCard = ({ title, description, price, image, category, id  }) => {
+const GiftCard = ({ title, description, price, imgURL, category, id  }) => {
+    console.log(imgURL);
     return(
-        <Link className='link' to = {`/gifts/details/${id}`}>
+        <Link className='link' to = {`/gifts/${id}`}>
             <div className="gift-card">
-                <img className='image' src={image} alt="not found" width='100px' height='50px'/>
+                <img className='image' src={imgURL} alt="not found" width='100px' height='50px'/>
                 <h3 className='text'>{title}</h3>
                 <h5 className='text'>{description}</h5>
                 <h5 className='text'>{price}</h5>
