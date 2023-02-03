@@ -1,0 +1,16 @@
+.gifts-container {
+    justify-content: space-around;
+}
+
+.gifts {
+    width: 250px;
+    height: 250px;
+    padding: 50px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    background-color: #F5F4F4;
+    border: 4px dashed #FF6666;
+    box-shadow: 2px 2px 7px 1px #000000;
+    border-radius: 30px;
+}

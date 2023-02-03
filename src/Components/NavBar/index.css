@@ -1,0 +1,37 @@
+.nav-bar {
+    background-color: #FF9090;
+    border-bottom: 2px solid #000000;
+    box-shadow: 2px 2px 7px 1px #000000;
+    border-radius: 5px;
+
+}
+
+.nav-bar-btn {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 20px;
+    padding: 10px;
+    margin: 15px;
+    margin-left: 100px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(rgb(255, 214, 214) 0%, rgb(255, 214, 214) 100%);
+    box-shadow: rgba(0, 0, 0, 0.8) 3px 4px 5px 3px;
+    border: 2px solid rgb(255, 102, 102);
+    display: inline-block;
+}
+
+.nav-bar-btn:hover {
+    background: #FF6666;
+    border: rgb(255, 214, 214);
+}
+
+.nav-bar-btn:active {
+    background: #FF6666;
+    border: rgb(255, 214, 214);
+}

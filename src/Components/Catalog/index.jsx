@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllGifts } from "../../Redux/actions";
 import GiftCard from "../GiftCard";
+import './index.css';
 
 const Catalog = () => {
 
@@ -15,21 +16,22 @@ const Catalog = () => {
 
     return(
         <div className="Catalog">
-            {
-                allGifts.map((gift) => {
-                    return(
-                        <div>
-                            <GiftCard
-                                title={gift.title}
-                                description={gift.description}
-                                price={gift.price}
-                                imgURL={gift.imgURL}
-                                category={gift.category} 
-                                id={gift.id} />
-                    </div>
-                    )
-                })
-            }
+            <div className="gifts-container">
+                {
+                    allGifts.map((gift) => {
+                        return(
+                            <div className="gifts">
+                                <GiftCard
+                                    title={gift.title}
+                                    price={gift.price}
+                                    imgURL={gift.imgURL}
+                                    category={gift.category} 
+                                    id={gift.id} />
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

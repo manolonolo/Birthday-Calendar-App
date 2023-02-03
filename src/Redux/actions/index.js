@@ -1,5 +1,4 @@
 export const getAllGifts= () => (dispatch) => {
-    console.log('getAllGifts');
     return fetch('http://localhost:3001/gifts')
     .then(res => {
         res.json()
