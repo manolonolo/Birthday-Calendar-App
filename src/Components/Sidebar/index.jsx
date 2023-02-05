@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllGifts } from "../../Redux/actions";
+import './index.css';
 
 const Sidebar = ({ byPrice, byCategory, byTitle, byCombo }) => {
 

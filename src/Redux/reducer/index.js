@@ -55,7 +55,7 @@ function rootReducer(state = initialState, action){
                 ...state,
                 allGifts: giftsByTitle
             };
-    
+
         case 'SORT_BY_PRICE':
             const lowerToHighest = action.payload === 'Lower price'
             ? state.gifts.sort((a, b) => a.price - b.price)

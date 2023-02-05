@@ -1,0 +1,40 @@
+.sidebar {
+    display: inline-block;
+    padding: 200px 50px;
+    border: 5px solid #FF6666;
+    border-radius: 0px 30px 30px 0px;
+    background-color: #FF9090;
+}
+
+.filters-container {
+    display: block;
+    margin-top: 30px;
+    justify-content: flex-start;
+}
+
+.filter {
+    display: block;
+    margin: 30px;
+    justify-content: flex-start;
+}
+
+.r-filter {
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 20px;
+    padding: 13px;
+    border-radius: 0px;
+    font-family: Georgia, serif;
+    background-color: rgb(255, 144, 144);
+    border: 5px double rgb(255, 102, 102);
+    display: inline-block;
+}
+
+.r-filter:hover {
+    background: #FF6666;
+}
+
+.r-filter:active {
+    background: #FF6666;
+}

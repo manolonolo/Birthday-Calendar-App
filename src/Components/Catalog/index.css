@@ -1,5 +1,9 @@
-.gifts-container {
-    justify-content: space-around;
+.catalog-container {
+    width: 1500px;
+    height: 2000px;
+    display: flex;
+    flex-flow: column wrap;
+
 }
 
 .gifts {
@@ -13,4 +17,13 @@
     border: 4px dashed #FF6666;
     box-shadow: 2px 2px 7px 1px #000000;
     border-radius: 30px;
+    text-align-last: left;
+}
+
+.sidebar-container {
+    margin-top: 50px;
+}
+
+.gifts-container {
+    padding: 100px;
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllGifts, sortByPrice, orderByTitle, sortByCategory, showCombo } from "../../Redux/actions";
 import GiftCard from "../GiftCard";
-import Sidebar from "../Sidebar/Sidebar";
+import Sidebar from "../Sidebar";
 import './index.css';
 
 const Catalog = () => {
@@ -37,15 +37,16 @@ const Catalog = () => {
 
     return(
         <div className="Catalog">
-            <div className="sidebar-container">
-                <Sidebar
-                    byPrice={byPrice}
-                    byTitle={byTitle}
-                    byCategory={byCategory}
-                    byCombo={byCombo}
-                />
-            </div>
-            <div className="gifts-container">
+            <div className="catalog-container">
+                <div className="sidebar-container">
+                    <Sidebar
+                        byPrice={byPrice}
+                        byTitle={byTitle}
+                        byCategory={byCategory}
+                        byCombo={byCombo}
+                    />
+                </div>
+                <div className="gifts-container">
                 {
                     allGifts.map((gift) => {
                         return(
@@ -61,6 +62,7 @@ const Catalog = () => {
                         )
                     })
                 }
+                </div>
             </div>
         </div>
     )
