@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SearchBar from "../SearchBar";
 import './index.css';
 
 const NavBar = () => {
@@ -16,7 +15,6 @@ const NavBar = () => {
             <Link to='/calendar'>
                 <button className="nav-bar-btn">Calendar</button>
             </Link>
-            <SearchBar />
         </div>
     )
 }

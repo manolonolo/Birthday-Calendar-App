@@ -15,7 +15,6 @@ const Home = () => {
     const allGifts = useSelector((state) => state.gifts);
 
     const topGifts = allGifts.slice(-3);
-    console.log(topGifts);
 
     return(
         <div className="Home">

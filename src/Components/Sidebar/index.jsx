@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getAllGifts } from "../../Redux/actions";
+import SearchBar from "../SearchBar";
 import './index.css';
 
 const Sidebar = ({ byPrice, byCategory, byTitle, byCombo }) => {
@@ -19,6 +20,9 @@ const Sidebar = ({ byPrice, byCategory, byTitle, byCombo }) => {
 
     return(
         <div className="sidebar">
+            <div className="searchbar-container">
+                <SearchBar />
+            </div>
             <div className="filters-container">
                 <select className="filter" onChange={(e) => byPrice(e)}>
                     <option value="none" selected disabled hidden >Sort by price</option>

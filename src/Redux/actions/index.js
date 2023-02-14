@@ -1,4 +1,4 @@
-export const getAllGifts= () => (dispatch) => {
+export const getAllGifts = () => (dispatch) => {
     return fetch('http://localhost:3001/gifts')
     .then(res => {
         res.json()
@@ -10,9 +10,13 @@ export const getAllGifts= () => (dispatch) => {
 };
 
 export const getGiftById = (id) => (dispatch) => {
-    return fetch(`http://localhost:3000/gifts/${id}`)
-    .then((res) => res.json())
-    .then((info) => dispatch({type: 'GET_GIFT_BY_ID', payload: info.data}))
+    return fetch(`http://localhost:3001/gifts/${id}`)
+    .then(res => {
+        res.json()
+        .then((info) => {
+            dispatch({type: 'GET_GIFT_BY_ID', payload: info})
+        })
+    })
     .catch(error => dispatch({type:'GET_GIFT_BY_ID', payload: {error}}))
 }
 
@@ -43,3 +47,14 @@ export function sortByPrice(payload){
         payload
     }
 }
+
+export const getGiftByTitle = (title) => (dispatch) => {
+    return fetch(`http://localhost:3001/gifts?title=${title}`)
+    .then(res => {
+        res.json()
+        .then((info) => {
+            dispatch({ type: 'GET_GIFT_TITLE', payload: info })
+        })
+    })
+    .catch((error) => dispatch({ type: 'GET_GIFT_TITLE', payload: {error} }))
+};

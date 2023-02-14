@@ -14,6 +14,7 @@ const Catalog = () => {
     }, [dispatch]);
 
     const allGifts = useSelector((state) => state.gifts);
+    console.log(allGifts);
 
     function byPrice(e){
         e.preventDefault();
@@ -48,7 +49,7 @@ const Catalog = () => {
                 </div>
                 <div className="gifts-container">
                 {
-                    allGifts.map((gift) => {
+                    allGifts ? allGifts.map((gift) => {
                         return(
                             <div className="gifts">
                                 <GiftCard
@@ -60,7 +61,10 @@ const Catalog = () => {
                                 />
                             </div>
                         )
-                    })
+                    }) : 
+                    <div className="not-found">
+                        <h3>Sorry, there are no gifts like that.</h3>
+                    </div>
                 }
                 </div>
             </div>

@@ -1,6 +1,7 @@
 const initialState = {
     gifts: [],
-    allGifts: []
+    allGifts: [],
+    giftId: {}
 }
 
 function rootReducer(state = initialState, action){
@@ -32,7 +33,6 @@ function rootReducer(state = initialState, action){
             const filteredStatus = action.payload === 'All'?
             allGifts:
             allGifts.filter(g => g.category === action.payload)
-            console.log(filteredStatus)
             return {
                 ...state,
                 gifts: filteredStatus
@@ -50,7 +50,6 @@ function rootReducer(state = initialState, action){
                 if(a.title > b.title) return -1;
                 return 0;
             })
-            console.log(giftsByTitle);
             return {
                 ...state,
                 allGifts: giftsByTitle
@@ -64,6 +63,18 @@ function rootReducer(state = initialState, action){
             return {
                 ...state,
                 allGifts: lowerToHighest
+            };
+
+        case 'GET_GIFT_TITLE':
+            const gift = [];
+            if(action.payload === []){
+                return {}
+            } else {
+                action.payload.map(g => gift.push(g))
+            }
+            return {
+                ...state,
+                gifts: gift
             };
 
         default:
